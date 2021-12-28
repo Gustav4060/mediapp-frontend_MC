@@ -1,0 +1,44 @@
+<h2 mat-dialog-title>Nuevo Paciente</h2>
+
+<form class="example-container" [formGroup]="form" #frmPaciente="ngForm" (ngSubmit)="operar()">
+
+    <div [hidden]="true">
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="ID" required formControlName="id">
+        </mat-form-field>
+    </div>
+
+    <mat-form-field class="example-full-width">            
+        <input matInput placeholder="Nombres" required formControlName="nombres">             
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">        
+        <input matInput placeholder="Apellidos" required formControlName="apellidos">           
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="DNI" minlength="8" required formControlName="dni">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Teléfono" minlength="9" maxlength="9" required formControlName="telefono" type="number">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Direccion" required formControlName="direccion">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Email" required type="email" formControlName="email">
+    </mat-form-field>
+ 
+    <button mat-raised-button color="primary" type="submit" [disabled]="frmPaciente.invalid">
+        <mat-icon>done</mat-icon>
+        <span>Aceptar</span>
+    </button>
+    <button mat-raised-button color="accent" (click)="cerrar()" type="button">
+        <mat-icon>close</mat-icon>
+        <span>Cancelar</span>
+    </button>
+</form>
+ 
